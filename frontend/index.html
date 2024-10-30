@@ -1,316 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Job Home</title>
-    <link rel="stylesheet" href="./assets/css/slick.css" />
-    <link rel="stylesheet" href="./assets/css/aos.css" />
-    <link rel="stylesheet" href="./assets/css/output.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <body>
-    <!-- layout start -->
-    <div class="layout-wrapper active w-full">
-      <div class="relative flex w-full">
-        <aside
-          class="sidebar-wrapper fixed top-0 z-30 block h-full w-[308px] bg-white dark:bg-darkblack-600 sm:hidden xl:block"
-        >
-          <div
-            class="sidebar-header relative z-30 flex h-[108px] w-full items-center border-b border-r border-b-[#F7F7F7] border-r-[#F7F7F7] pl-[50px] dark:border-darkblack-400"
-          >
-            <a href="index.html">
-              <h1 class="text-4xl">
-                <strong>
-                  <span class="text-white">Job</span> <span class="text-success-300">Home</span>
-                </strong>
-              </h1>
-            </a>
-            <button
-              type="button"
-              class="drawer-btn absolute right-0 top-auto"
-              title="Ctrl+b"
-            >
-              <span>
-                <svg
-                  width="16"
-                  height="40"
-                  viewBox="0 0 16 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H16V40H10C4.47715 40 0 35.5228 0 30V10Z"
-                    fill="#22C55E"
-                  />
-                  <path
-                    d="M10 15L6 20.0049L10 25.0098"
-                    stroke="#ffffff"
-                    stroke-width="1.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-          <div
-            class="sidebar-body overflow-style-none relative z-30 h-screen w-full overflow-y-scroll pb-[200px] pl-[48px] pt-[14px]"
-          >
-            <div class="nav-wrapper mb-[36px] pr-[50px]">
-              <div class="item-wrapper mb-5">
-                <h4
-                  class="border-b border-bgray-200 text-sm font-medium leading-7 text-bgray-700 dark:border-darkblack-400 dark:text-bgray-50"
-                >
-                  Menu
-                </h4>
-                <ul class="mt-2.5">
-                  <li class="item py-[11px] text-bgray-900 dark:text-white">
-                    <a href="index.html">
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2.5">
-                          <span class="item-ico">
-                            <svg
-                              width="18"
-                              height="21"
-                              viewBox="0 0 18 21"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                class="path-1"
-                                d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
-                                fill="#1A202C"
-                              />
-                              <path
-                                class="path-2"
-                                d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
-                                fill="#22C55E"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="item-text text-lg font-medium leading-none"
-                            >Dashboard</span
-                          >
-                        </div>
-                        <span>
-                          <svg
-                            width="6"
-                            height="12"
-                            viewBox="0 0 6 12"
-                            fill="none"
-                            class="fill-current"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              fill="currentColor"
-                              d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z"
-                            />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="manifest" href="manifest.json">
+  <title>Job Home</title>
+  <link rel="stylesheet" href="./assets/css/slick.css" />
+  <link rel="stylesheet" href="./assets/css/aos.css" />
+  <link rel="stylesheet" href="./assets/css/output.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <!-- layout start -->
+  <div class="layout-wrapper active w-full">
+    <div class="relative flex w-full">
+      <aside
+        class="sidebar-wrapper fixed top-0 z-30 block h-full w-[308px] bg-white dark:bg-darkblack-600 sm:hidden xl:block">
+        <div
+          class="sidebar-header relative z-30 flex h-[108px] w-full items-center border-b border-r border-b-[#F7F7F7] border-r-[#F7F7F7] pl-[50px] dark:border-darkblack-400">
+          <a href="index.html">
+            <h1 class="text-4xl">
+              <strong>
+                <span class="text-white">Job</span> <span class="text-success-300">Home</span>
+              </strong>
+            </h1>
+          </a>
+          <button type="button" class="drawer-btn absolute right-0 top-auto" title="Ctrl+b">
+            <span>
+              <svg width="16" height="40" viewBox="0 0 16 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 10C0 4.47715 4.47715 0 10 0H16V40H10C4.47715 40 0 35.5228 0 30V10Z" fill="#22C55E" />
+                <path d="M10 15L6 20.0049L10 25.0098" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="sidebar-body overflow-style-none relative z-30 h-screen w-full overflow-y-scroll pb-[200px] pl-[48px] pt-[14px]">
+          <div class="nav-wrapper mb-[36px] pr-[50px]">
+            <div class="item-wrapper mb-5">
+              <h4
+                class="border-b border-bgray-200 text-sm font-medium leading-7 text-bgray-700 dark:border-darkblack-400 dark:text-bgray-50">
+                Menu
+              </h4>
+              <ul class="mt-2.5">
+                <li class="item py-[11px] text-bgray-900 dark:text-white">
+                  <a href="index.html">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-2.5">
+                        <span class="item-ico">
+                          <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="path-1"
+                              d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
+                              fill="#1A202C" />
+                            <path class="path-2"
+                              d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z" fill="#22C55E" />
                           </svg>
                         </span>
+                        <span class="item-text text-lg font-medium leading-none">Dashboard</span>
                       </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="copy-write-text">
-              <p class="text-sm text-[#969BA0]">© 2024 All Rights Reserved</p>
-              <p class="text-sm font-medium text-bgray-700">
-                Made with ❤️ by
-                <a
-                  href="#"
-                  target="_blank"
-                  class="border-b font-semibold hover:text-blue-600"
-                  >M1 Dev</a
-                >
-              </p>
+                      <span>
+                        <svg width="6" height="12" viewBox="0 0 6 12" fill="none" class="fill-current"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                            d="M0.531506 0.414376C0.20806 0.673133 0.155619 1.1451 0.414376 1.46855L4.03956 6.00003L0.414376 10.5315C0.155618 10.855 0.208059 11.3269 0.531506 11.5857C0.854952 11.8444 1.32692 11.792 1.58568 11.4685L5.58568 6.46855C5.80481 6.19464 5.80481 5.80542 5.58568 5.53151L1.58568 0.531506C1.32692 0.20806 0.854953 0.155619 0.531506 0.414376Z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-        </aside>
-        <div
-          style="z-index: 25"
-          class="aside-overlay fixed left-0 top-0 block h-full w-full bg-black bg-opacity-30 sm:hidden"
-        ></div>
-        <aside class="relative hidden w-[96px] bg-white dark:bg-black sm:block">
-          <div class="sidebar-wrapper-collapse relative top-0 z-30 w-full">
-            <div
-              class="sidebar-header sticky top-0 z-20 flex h-[108px] w-full items-center justify-center border-b border-r border-b-[#F7F7F7] border-r-[#F7F7F7] bg-white dark:border-darkblack-500 dark:bg-darkblack-600"
-            >
-              <a href="index.html">
-                <img
-                  src="./assets/images/logo/logo-short.svg"
-                  class="block dark:hidden"
-                  alt="logo"
-                />
-                <img
-                  src="./assets/images/logo/logo-short-white.svg"
-                  class="hidden dark:block"
-                  alt="logo"
-                />
-              </a>
-            </div>
-            <div class="sidebar-body w-full pt-[14px]">
-              <div class="flex flex-col items-center">
-                <div class="nav-wrapper mb-[36px]">
-                  <div class="item-wrapper mb-5">
-                    <ul
-                      class="mt-2.5 flex flex-col items-center justify-center"
-                    >
-                      <li class="item px-[43px] py-[11px]">
-                        <a href="index.html">
-                          <span class="item-ico">
-                            <svg
-                              width="18"
-                              height="21"
-                              viewBox="0 0 18 21"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                class="path-1"
-                                d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
-                                fill="#1A202C"
-                              />
-                              <path
-                                class="path-2"
-                                d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z"
-                                fill="#22C55E"
-                              />
-                            </svg>
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+
+          <div class="copy-write-text">
+            <p class="text-sm text-[#969BA0]">© 2024 All Rights Reserved</p>
+            <p class="text-sm font-medium text-bgray-700">
+              Made with ❤️ by
+              <a href="#" target="_blank" class="border-b font-semibold hover:text-blue-600">M1 Dev</a>
+            </p>
+          </div>
+        </div>
+      </aside>
+      <div style="z-index: 25"
+        class="aside-overlay fixed left-0 top-0 block h-full w-full bg-black bg-opacity-30 sm:hidden"></div>
+      <aside class="relative hidden w-[96px] bg-white dark:bg-black sm:block">
+        <div class="sidebar-wrapper-collapse relative top-0 z-30 w-full">
+          <div
+            class="sidebar-header sticky top-0 z-20 flex h-[108px] w-full items-center justify-center border-b border-r border-b-[#F7F7F7] border-r-[#F7F7F7] bg-white dark:border-darkblack-500 dark:bg-darkblack-600">
+            <a href="index.html">
+              <img src="./assets/images/logo/logo-short.svg" class="block dark:hidden" alt="logo" />
+              <img src="./assets/images/logo/logo-short-white.svg" class="hidden dark:block" alt="logo" />
+            </a>
+          </div>
+          <div class="sidebar-body w-full pt-[14px]">
+            <div class="flex flex-col items-center">
+              <div class="nav-wrapper mb-[36px]">
+                <div class="item-wrapper mb-5">
+                  <ul class="mt-2.5 flex flex-col items-center justify-center">
+                    <li class="item px-[43px] py-[11px]">
+                      <a href="index.html">
+                        <span class="item-ico">
+                          <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="path-1"
+                              d="M0 8.84719C0 7.99027 0.366443 7.17426 1.00691 6.60496L6.34255 1.86217C7.85809 0.515019 10.1419 0.515019 11.6575 1.86217L16.9931 6.60496C17.6336 7.17426 18 7.99027 18 8.84719V17C18 19.2091 16.2091 21 14 21H4C1.79086 21 0 19.2091 0 17V8.84719Z"
+                              fill="#1A202C" />
+                            <path class="path-2"
+                              d="M5 17C5 14.7909 6.79086 13 9 13C11.2091 13 13 14.7909 13 17V21H5V17Z" fill="#22C55E" />
+                          </svg>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </aside>
-        <div
-          class="body-wrapper flex-1 overflow-x-hidden"
-        >
-          <header class="header-wrapper fixed z-30 hidden w-full md:block">
-            <div
-              class="relative flex h-[108px] w-full items-center justify-between bg-white px-10 dark:bg-darkblack-600 2xl:px-[76px]"
-            >
-              <button
-                title="Ctrl+b"
-                type="button"
-                class="drawer-btn absolute left-0 top-auto rotate-180 transform"
-              >
-                <span>
-                  <svg
-                    width="16"
-                    height="40"
-                    viewBox="0 0 16 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 10C0 4.47715 4.47715 0 10 0H16V40H10C4.47715 40 0 35.5228 0 30V10Z"
-                      fill="#22C55E"
-                    />
-                    <path
-                      d="M10 15L6 20.0049L10 25.0098"
-                      stroke="#ffffff"
-                      stroke-width="1.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <div>
-                <h3
-                  class="text-xl font-bold text-bgray-900 dark:text-bgray-50 lg:text-3xl lg:leading-[36.4px]"
-                >
-                  Dashboard
-                </h3>
-              </div>
-
-          </header>
-          <main
-            class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-12 xl:pb-12"
-          >
-              <button
-              id="add-offer-btn"
-              class="mb-6 inline-block px-4 py-2 text-white bg-black rounded hover:bg-blue-600 focus:bg-blue-700"
-            >
-              Add Offer
-            </button>
-            <div class="job-cards-container grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
-                <h3 class="text-xl font-semibold text-white">Frontend Developer</h3>
-                <p class="text-success-400">Tech Innovations Inc.</p>
-                <p class="text-white">New York, NY</p>
-                <p class="text-success-400">Full-time</p>
-                <button class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
-                  See full offer
-                </button>
-              </div>
-            
-              <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
-                <h3 class="text-xl font-semibold text-white">Data Scientist</h3>
-                <p class="text-success-400">DataWorks</p>
-                <p class="text-white">San Francisco, CA</p>
-                <p class="text-success-400">Contract</p>
-                <button class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
-                  See full offer
-                </button>
-              </div>
-            
-              <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
-                <h3 class="text-xl font-semibold text-white">UX/UI Designer</h3>
-                <p class="text-success-400">Creative Solutions</p>
-                <p class="text-white">Remote</p>
-                <p class="text-success-400">Part-time</p>
-                <button class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
-                  See full offer
-                </button>
-              </div>
-            
-              <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
-                <h3 class="text-xl font-semibold text-white">Backend Engineer</h3>
-                <p class="text-success-400">ServerWorks LLC</p>
-                <p class="text-white">Austin, TX</p>
-                <p class="text-success-400">Full-time</p>
-                <button class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
-                  See full offer
-                </button>
-              </div>
-            </div>
-          
-          </main>
         </div>
+      </aside>
+      <div class="body-wrapper flex-1 overflow-x-hidden">
+        <header class="header-wrapper fixed z-30 hidden w-full md:block">
+          <div
+            class="relative flex h-[108px] w-full items-center justify-between bg-white px-10 dark:bg-darkblack-600 2xl:px-[76px]">
+            <button title="Ctrl+b" type="button" class="drawer-btn absolute left-0 top-auto rotate-180 transform">
+              <span>
+                <svg width="16" height="40" viewBox="0 0 16 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 10C0 4.47715 4.47715 0 10 0H16V40H10C4.47715 40 0 35.5228 0 30V10Z" fill="#22C55E" />
+                  <path d="M10 15L6 20.0049L10 25.0098" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+            <div>
+              <h3 class="text-xl font-bold text-bgray-900 dark:text-bgray-50 lg:text-3xl lg:leading-[36.4px]">
+                Dashboard
+              </h3>
+            </div>
+
+        </header>
+        <main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-12 xl:pb-12">
+          <button id="add-offer-btn"
+            class="mb-6 inline-block px-4 py-2 text-white bg-black rounded hover:bg-blue-600 focus:bg-blue-700">
+            Add Offer
+          </button>
+          <div class="job-cards-container grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+              <h3 class="text-xl font-semibold text-white">Frontend Developer</h3>
+              <p class="text-success-400">Tech Innovations Inc.</p>
+              <p class="text-white">New York, NY</p>
+              <p class="text-success-400">Full-time</p>
+              <button
+                class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
+                See full offer
+              </button>
+            </div>
+
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+              <h3 class="text-xl font-semibold text-white">Data Scientist</h3>
+              <p class="text-success-400">DataWorks</p>
+              <p class="text-white">San Francisco, CA</p>
+              <p class="text-success-400">Contract</p>
+              <button
+                class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
+                See full offer
+              </button>
+            </div>
+
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+              <h3 class="text-xl font-semibold text-white">UX/UI Designer</h3>
+              <p class="text-success-400">Creative Solutions</p>
+              <p class="text-white">Remote</p>
+              <p class="text-success-400">Part-time</p>
+              <button
+                class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
+                See full offer
+              </button>
+            </div>
+
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+              <h3 class="text-xl font-semibold text-white">Backend Engineer</h3>
+              <p class="text-success-400">ServerWorks LLC</p>
+              <p class="text-white">Austin, TX</p>
+              <p class="text-success-400">Full-time</p>
+              <button
+                class="mt-4 inline-block px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 focus:bg-green-700">
+                See full offer
+              </button>
+            </div>
+          </div>
+
+        </main>
       </div>
     </div>
-    <!--scripts -->
-    <script src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/aos.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="./assets/js/quill.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/chart.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // Function to add a new job card
-        function addJobCard() {
-          const jobCardsContainer = document.querySelector(".job-cards-container");
-    
-          const newCardHTML = `
+  </div>
+  <!--scripts -->
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/aos.js"></script>
+  <script src="./assets/js/slick.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="./assets/js/quill.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/chart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Function to add a new job card
+      function addJobCard() {
+        const jobCardsContainer = document.querySelector(".job-cards-container");
+
+        const newCardHTML = `
             <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
               <h3 class="text-xl font-semibold text-white">New Position</h3>
               <p class="text-success-400">New Company</p>
@@ -321,13 +226,14 @@
               </button>
             </div>
           `;
-    
-          jobCardsContainer.insertAdjacentHTML("beforeend", newCardHTML);
-        }
-    
-        // Attach the addJobCard function to the button
-        document.getElementById("add-offer-btn").addEventListener("click", addJobCard);
-      });
-    </script>
-  </body>
+
+        jobCardsContainer.insertAdjacentHTML("beforeend", newCardHTML);
+      }
+
+      // Attach the addJobCard function to the button
+      document.getElementById("add-offer-btn").addEventListener("click", addJobCard);
+    });
+  </script>
+</body>
+
 </html>
