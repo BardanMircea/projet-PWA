@@ -1,10 +1,10 @@
 {
-  "name": "BankCo HTML",
-  "description": "BankCo HTML template",
+  "name": "JobHome",
+  "description": "PWA project",
   "version": "1.0.0",
-  "author": "Quomodosoft",
+  "author": "M1 Dev",
   "scripts": {
-    "dev": "npx tailwindcss -i ./input.css -o ./assets/css/output.css --watch",
+    "dev": "concurrently \"npx tailwindcss -i ./input.css -o ./assets/css/output.css --watch\" \"serve -l 55173\" ",
     "build": "npx tailwindcss -i ./input.css -o ./assets/css/output.css"
   },
   "devDependencies": {
