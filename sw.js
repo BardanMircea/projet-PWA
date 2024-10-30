@@ -2,6 +2,8 @@ const CACHE_NAME = 'tailwind-cache-v1';
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
+  './input.css',
+  './assets/css/output.css',
 ];
 
 // Installation du service worker
