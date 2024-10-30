@@ -1,39 +1,43 @@
-const CACHE_NAME = 'tailwind-cache-v1';
+const CACHE_NAME = "tailwind-cache-v1";
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  './input.css',
-  './assets/css/output.css',
+  "/",
+  "/index.html",
+  "./input.css",
+  "./assets/css/output.css",
 ];
 
 // Installation du service worker
-self.addEventListener('install', (event) => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('Ouverture du cache');
-      return cache.addAll(FILES_TO_CACHE);
-    })
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      console.log("Ouverture du cache");
+      await cache.addAll(FILES_TO_CACHE);
+    })()
   );
 });
 
 // Activation du service worker
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Suppression de l\'ancien cache', cacheName);
-            return caches.delete(cacheName);
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
+    (async () => {
+      const keyList = await caches.keys();
+      await Promise.all(
+        keyList.map((key) => {
+          console.log(key);
+          if (key !== CACHE_NAME) {
+            console.log("Suppression de l'ancien cache", CACHE_NAME);
+            return caches.delete(key);
           }
         })
       );
-    })
+    })()
   );
+  e.waitUntil(self.clients.claim());
 });
 
 // Interception des requêtes
-self.addEventListener('fetch', (event) => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
       // Retourne le fichier en cache s'il est trouvé
@@ -47,6 +51,16 @@ self.addEventListener('fetch', (event) => {
           return response;
         });
       });
+    })
+  );
+});
+
+// Notifications push
+self.addEventListener("push", function (event) {
+  const payload = event.data ? event.data.text() : "no payload";
+  event.waitUntil(
+    self.registration.showNotification("ServiceWorker Cookbook", {
+      body: payload,
     })
   );
 });
