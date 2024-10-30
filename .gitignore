@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+./frontend/assets/css/outpout.css
 # misc
 .DS_Store
 .idea

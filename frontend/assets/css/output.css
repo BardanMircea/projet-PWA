@@ -1172,10 +1172,6 @@ select{
   margin-bottom: 13px;
 }
 
-.mb-\[24px\]{
-  margin-bottom: 24px;
-}
-
 .mb-\[26px\]{
   margin-bottom: 26px;
 }
@@ -1484,10 +1480,6 @@ select{
   width: 2rem;
 }
 
-.w-\[106px\]{
-  width: 106px;
-}
-
 .w-\[134px\]{
   width: 134px;
 }
@@ -1744,10 +1736,6 @@ select{
   gap: 1.5rem;
 }
 
-.gap-\[24px\]{
-  gap: 24px;
-}
-
 .gap-x-11{
   -moz-column-gap: 2.75rem;
        column-gap: 2.75rem;
@@ -1854,12 +1842,6 @@ select{
   --tw-space-x-reverse: 0;
   margin-right: calc(6px * var(--tw-space-x-reverse));
   margin-left: calc(6px * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-\[7px\] > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(7px * var(--tw-space-x-reverse));
-  margin-left: calc(7px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
@@ -2698,10 +2680,6 @@ select{
   line-height: 28px;
 }
 
-.leading-\[48px\]{
-  line-height: 48px;
-}
-
 .leading-none{
   line-height: 1;
 }
@@ -3490,10 +3468,6 @@ select{
     width: auto;
   }
 
-  .lg\:grid-cols-3{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .lg\:flex-row{
     flex-direction: row;
   }
@@ -3633,20 +3607,12 @@ select{
     grid-column: span 9 / span 9;
   }
 
-  .\32xl\:mb-0{
-    margin-bottom: 0px;
-  }
-
   .\32xl\:mt-24{
     margin-top: 6rem;
   }
 
   .\32xl\:block{
     display: block;
-  }
-
-  .\32xl\:flex{
-    display: flex;
   }
 
   .\32xl\:w-\[382px\]{
@@ -3687,12 +3653,6 @@ select{
     --tw-space-x-reverse: 0;
     margin-right: calc(1.5rem * var(--tw-space-x-reverse));
     margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .\32xl\:space-x-\[48px\] > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0;
-    margin-right: calc(48px * var(--tw-space-x-reverse));
-    margin-left: calc(48px * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .\32xl\:border-r{
