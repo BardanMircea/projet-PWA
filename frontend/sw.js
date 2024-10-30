@@ -1,23 +1,34 @@
-const CACHE_NAME = "tailwind-cache-v1";
-const FILES_TO_CACHE = [
+// Service Worker
+const cacheName = "my-pwa-shell-v1.0";
+const filesToCache = [
   "/",
   "/index.html",
   "./input.css",
   "./assets/css/output.css",
 ];
 
-// Installation du service worker
-self.addEventListener("install", (event) => {
-  event.waitUntil(
+self.addEventListener("install", (e) => {
+  console.log("[ServiceWorker] - Install");
+  e.waitUntil(
     (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      console.log("Ouverture du cache");
-      await cache.addAll(FILES_TO_CACHE);
+      const cache = await caches.open(cacheName);
+      console.log("[ServiceWorker] - Caching app shell");
+      await cache.addAll(filesToCache);
     })()
   );
 });
 
-// Activation du service worker
+self.addEventListener("fetch", (e) => {
+  e.respondWith(
+    (async () => {
+      const resource = await caches.match(e.request);
+      console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
+
+      return resource || fetch(e.request);
+    })()
+  );
+});
+
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     (async () => {
@@ -25,8 +36,8 @@ self.addEventListener("activate", (e) => {
       await Promise.all(
         keyList.map((key) => {
           console.log(key);
-          if (key !== CACHE_NAME) {
-            console.log("Suppression de l'ancien cache", CACHE_NAME);
+          if (key !== cacheName) {
+            console.log("[ServiceWorker] - Removing old cache", key);
             return caches.delete(key);
           }
         })
@@ -36,30 +47,10 @@ self.addEventListener("activate", (e) => {
   e.waitUntil(self.clients.claim());
 });
 
-// Interception des requêtes
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Retourne le fichier en cache s'il est trouvé
-      if (response) {
-        return response;
-      }
-      // Sinon, fais une requête réseau et met le fichier en cache
-      return fetch(event.request).then((response) => {
-        return caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      });
-    })
-  );
-});
-
-// Notifications push
 self.addEventListener("push", function (event) {
   const payload = event.data ? event.data.text() : "no payload";
   event.waitUntil(
-    self.registration.showNotification("ServiceWorker Cookbook", {
+    self.registration.showNotification("JobHome M1 Dev", {
       body: payload,
     })
   );

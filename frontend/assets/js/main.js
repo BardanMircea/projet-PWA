@@ -253,7 +253,6 @@ function navSubmenu() {
 }
 navSubmenu();
 
-
 // function initModeSetting() {
 //   var body = document.body;
 //   var lightDarkBtn = document.querySelectorAll('.light-dark-mode');
@@ -280,30 +279,12 @@ navSubmenu();
 
 // initModeSetting()
 
-
-
-  // Check the initial theme preference and apply the appropriate class
-  if (localStorage.theme === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-
-  // Toggle the theme when the button is clicked
-  var themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', function() {
-    // Check the current theme and toggle it
-    if (localStorage.theme === 'dark') {
-      localStorage.theme = 'light';
-    } else {
-      localStorage.theme = 'dark';
-    }
-
-    // Apply the new theme
-    if (localStorage.theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  });
-
+// Check the initial theme preference and apply the appropriate class
+if (
+  localStorage.theme === "dark" ||
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
