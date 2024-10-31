@@ -47,6 +47,7 @@ npm run dev
 ```
 
 Cela lancera simultanément le serveur frontend et backend.
+Le projet est disponible à l'adresse http://localhost:55183/
 
 ## Scripts
 

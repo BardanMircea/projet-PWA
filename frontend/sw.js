@@ -79,7 +79,7 @@ self.addEventListener("push", function (event) {
   const payload = event.data ? event.data.text() : "no payload";
   event.waitUntil(
     self.registration.showNotification("JobHome M1 Dev", {
-      icon: "/assets/images/logo/logoBlack.png", // Ajouter un chemin d'icône si nécessaire
+      icon: "/assets/images/logo/pushLogo.png", // Ajouter un chemin d'icône si nécessaire
       data: { url: "http://localhost:55183/ad-details.html" }, // On stocke l'URL cible pour le clic
       body: payload,
     })
