@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "M1 Dev",
   "scripts": {
-    "dev": "concurrently \"npx tailwindcss -i ./input.css -o ./assets/css/output.css --watch\" \"serve -l 55177\" ",
+    "dev": "concurrently \"npx tailwindcss -i ./input.css -o ./assets/css/output.css --watch\" \"serve -l 55179\" ",
     "build": "npx tailwindcss -i ./input.css -o ./assets/css/output.css"
   },
   "devDependencies": {
