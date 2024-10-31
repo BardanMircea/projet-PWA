@@ -80,7 +80,7 @@ self.addEventListener("push", function (event) {
   event.waitUntil(
     self.registration.showNotification("JobHome M1 Dev", {
       icon: "/assets/images/logo/logoBlack.png", // Ajouter un chemin d'icône si nécessaire
-      data: { url: "http://localhost:55182/ad-details.html" }, // On stocke l'URL cible pour le clic
+      data: { url: "http://localhost:55183/ad-details.html" }, // On stocke l'URL cible pour le clic
       body: payload,
     })
   );

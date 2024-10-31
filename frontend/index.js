@@ -56,19 +56,13 @@ if ("serviceWorker" in navigator) {
             subscription: subscription,
           }),
         });
-
+        console.log(subscription);
         document.getElementById("add-offer-btn").onclick = function () {
           fetch("http://localhost:3000/sendNotification", {
             method: "post",
             headers: {
               "Content-type": "application/json",
             },
-            body: JSON.stringify({
-              subscription: subscription,
-              payload: "Une nouvelle offre d'emploi est disponible !",
-              delay: 5,
-              ttl: 0,
-            }),
           });
         };
       })
