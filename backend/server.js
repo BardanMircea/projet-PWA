@@ -1,6 +1,8 @@
 // server.js
 const express = require("express");
 var cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 const bp = require("body-parser");
 const webpush = require("web-push");
 const app = express();
@@ -35,21 +37,55 @@ app.get("/vapidPublicKey", function (req, res) {
 });
 
 app.post("/register", function (req, res) {
-  // Enregistrer la souscription ici dans une vraie app
+  const subscription = req.body.subscription; // Get subscription data from request body
+
+  // Path to subscriptions.json file
+  const filePath = path.join(__dirname, "subscriptions.json");
+
+  // Read the current subscriptions file or initialize an empty array if it doesn't exist
+  fs.readFile(filePath, "utf8", (err, data) => {
+    let subscriptions = [];
+    if (!err && data) {
+      subscriptions = JSON.parse(data);
+    }
+
+    // Add the new subscription to the array
+    subscriptions.push(subscription);
+
+    // Write updated subscriptions back to the file
+    fs.writeFile(filePath, JSON.stringify(subscriptions, null, 2), (err) => {
+      if (err) {
+        console.error("Error saving subscription:", err);
+        return res.status(500).send("Failed to save subscription");
+      }
+      res.sendStatus(201); // Send response to client
+    });
+  });
   res.sendStatus(201);
 });
 
 // Envoi de la notification push
 app.post("/sendNotification", function (req, res) {
-  const subscription = req.body.subscription;
-  const payload = req.body.payload;
-  const options = {
-    TTL: req.body.ttl,
-  };
+  const filePath = path.join(__dirname, "subscriptions.json");
+  // Read the subscriptions file
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      return console.error("Error reading subscriptions file:", err);
+    }
 
-  setTimeout(function () {
+    // Parse the JSON data
+    const subscriptions = JSON.parse(data);
+
+    // Loop through each subscription and send notification
+
     webpush
-      .sendNotification(subscription, payload, options)
+      .sendNotification(
+        subscriptions[0],
+        "Une nouvelle offre d'emploi est disponible !",
+        {
+          TTL: 0,
+        }
+      )
       .then(function () {
         res.sendStatus(201);
       })
@@ -57,7 +93,7 @@ app.post("/sendNotification", function (req, res) {
         console.log(error);
         res.sendStatus(500);
       });
-  }, req.body.delay * 1000);
+  });
 });
 
 // Starting the server
