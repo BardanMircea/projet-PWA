@@ -8,6 +8,14 @@ const webpush = require("web-push");
 const app = express();
 const port = 3000;
 
+// Dynamic Vapid keys
+/*const vapidKeys = webpush.generateVAPIDKeys();
+webpush.setVapidDetails(
+  "mailto:juanda99@gmail.com",
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
+);
+*/
 // Configuration web-push
 webpush.setVapidDetails(
   "mailto:juanda99@gmail.com",
