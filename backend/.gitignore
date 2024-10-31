@@ -1,7 +1,7 @@
 # dependencies
 /node_modules
 assets/css/output.css
-./subscriptions.json
+/subscriptions.json
 # misc
 .DS_Store
 .idea
