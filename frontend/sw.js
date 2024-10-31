@@ -5,6 +5,9 @@ const filesToCache = [
   "/index.html",
   "./input.css",
   "./assets/css/output.css",
+  "./assets/images/logo/logo-short-white.svg",
+  "/404.html",
+  "manifest.json",
 ];
 
 self.addEventListener("install", (e) => {
