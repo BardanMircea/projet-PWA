@@ -75,8 +75,9 @@
         </div>
       </aside>
       <div style="z-index: 25"
-        class="aside-overlay fixed left-0 top-0 block h-full w-full bg-black bg-opacity-30 sm:hidden"></div>
-      <aside class="relative hidden w-[96px] bg-white dark:bg-black sm:block">
+        class="aside-overlay fixed left-0 top-0 block h-full w-full dark:bg-darkblack-600 bg-opacity-30 sm:hidden">
+      </div>
+      <aside class="relative hidden w-[96px] bg-white dark:dark:bg-darkblack-600 sm:block">
         <div class="sidebar-wrapper-collapse relative top-0 z-30 w-full">
           <div
             class="sidebar-header sticky top-0 z-20 flex h-[108px] w-full items-center justify-center border-b border-r border-b-[#F7F7F7] border-r-[#F7F7F7] bg-white dark:border-darkblack-500 dark:bg-darkblack-600">
@@ -133,11 +134,11 @@
         </header>
         <main class="w-full px-6 pb-6 pt-[100px] sm:pt-[156px] xl:px-12 xl:pb-12">
           <button id="add-offer-btn"
-            class="mb-6 inline-block px-4 py-2 text-white bg-black rounded hover:bg-blue-600 focus:bg-blue-700">
+            class="mb-6 inline-block px-4 py-2 text-white dark:bg-darkblack-600 rounded hover:bg-blue-600 focus:bg-blue-700">
             Add Offer
           </button>
           <div class="job-cards-container grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md dark:bg-darkblack-600">
               <h1 class="text-xl font-semibold text-white">Frontend Developer</h1>
               <p class="text-success-400">Tech Innovations Inc.</p>
               <p class="text-white">New York, NY</p>
@@ -148,7 +149,7 @@
               </button>
             </div>
 
-            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md dark:bg-darkblack-600">
               <h1 class="text-xl font-semibold text-white">Data Scientist</h1>
               <p class="text-success-400">DataWorks</p>
               <p class="text-white">San Francisco, CA</p>
@@ -159,7 +160,7 @@
               </button>
             </div>
 
-            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md dark:bg-darkblack-600">
               <h1 class="text-xl font-semibold text-white">UX/UI Designer</h1>
               <p class="text-success-400">Creative Solutions</p>
               <p class="text-white">Remote</p>
@@ -170,7 +171,7 @@
               </button>
             </div>
 
-            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md dark:bg-darkblack-600">
               <h1 class="text-xl font-semibold text-white">Backend Engineer</h1>
               <p class="text-success-400">ServerWorks LLC</p>
               <p class="text-white">Austin, TX</p>
@@ -200,7 +201,7 @@
         const jobCardsContainer = document.querySelector(".job-cards-container");
 
         const newCardHTML = `
-            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md bg-black">
+            <div class="job-card border border-gray-700 rounded-lg p-4 shadow-md dark:bg-darkblack-600">
               <h3 class="text-xl font-semibold text-white">New Position</h3>
               <p class="text-success-400">New Company</p>
               <p class="text-white">Location</p>
